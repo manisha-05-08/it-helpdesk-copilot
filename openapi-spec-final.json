@@ -1,0 +1,70 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "ITHelpdeskTicketAPI",
+    "description": "API for creating IT support tickets",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://nonsmoking-overexcitably-carmelina.ngrok-free.dev"
+    }
+  ],
+  "paths": {
+    "/api/tickets": {
+      "post": {
+        "operationId": "createTicket",
+        "summary": "Create a new support ticket",
+        "description": "Creates a new IT support ticket with title, description, and priority",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["title", "description", "priority"],
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "description": "Title of the support ticket"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Detailed description of the issue"
+                  },
+                  "priority": {
+                    "type": "string",
+                    "description": "Priority level of the ticket",
+                    "enum": ["High", "Medium", "Low"]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Ticket created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ticketId": {
+                      "type": "string",
+                      "description": "The unique ticket ID"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "Current status of the ticket"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
