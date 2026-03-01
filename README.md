@@ -142,16 +142,6 @@ Message: "Your ticket {ticketId} has been created! Status: {status}"
 - Using ngrok for local development tunneling
 - End-to-end enterprise integration architecture
 
-## Future Enhancements
-
-- [ ] Add MongoDB/SQL database for persistent storage
-- [ ] Create "Check Ticket Status" API endpoint
-- [ ] Add user authentication and authorization
-- [ ] Deploy backend to Azure App Service
-- [ ] Use Azure Custom Connector instead of ngrok
-- [ ] Add ticket update and close functionality
-- [ ] Implement email notifications on ticket creation
-
 ## Author
 
 **Manisha Parmar**
